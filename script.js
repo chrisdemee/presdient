@@ -9,7 +9,7 @@ const nixonQuotes = [
 function getRandomQuote() {
     const randomIndex = Math.floor(Math.random() * nixonQuotes.length);
     document.getElementById("quoteDisplay").innerText = nixonQuotes[randomIndex];
-}
+}7
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("quoteDisplay").innerText = nixonQuotes[0]; // show first quote when site loads
