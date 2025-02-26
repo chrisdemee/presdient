@@ -12,6 +12,6 @@ function getRandomQuote() {
 }7
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("quoteDisplay").innerText = nixonQuotes[0]; // show first quote when site loads
+    document.getElementById("quoteDisplay").innerText = nixonQuotes[0]; // show the first quote when site loads
     document.getElementById("generateQuote").addEventListener("click", getRandomQuote);
 });
