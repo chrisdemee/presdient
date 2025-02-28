@@ -15,3 +15,23 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("quoteDisplay").innerText = nixonQuotes[0]; // show the first quote when site loads
     document.getElementById("generateQuote").addEventListener("click", getRandomQuote);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const facts = [
+        "Nixon was the first U.S. president to visit China.",
+        "He played five musical instruments, including the piano.",
+        "Nixon founded the Environmental Protection Agency (EPA).",
+        "He was a Quaker and didn't drink alcohol.",
+        "Nixon was an accomplished poker player during his Navy years."
+    ];
+    
+    const factText = document.getElementById("fact");
+    const hiddenContent = document.getElementById("hiddenContent");
+    const factButton = document.getElementById("factButton");
+    
+    factButton.addEventListener("click", function () {
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        factText.textContent = facts[randomIndex];
+        hiddenContent.style.display = "block";
+    });
+});
