@@ -37,7 +37,16 @@ h1, p {
 }
 
 body#index-page {
-  background: linear-gradient(to right, #4b6cb7, #182848);
+  background: linear-gradient(to right, #0a4be4, #e12544);
   color: white; /* Ensures text is visible on dark backgrounds */
 }
 
+h1 {
+  font-family: "pressato-variable", sans-serif;
+  font-size: 150px;
+font-variation-settings: "slnt" 0, "wght" 300, "wdth" 200;
+}
+p {
+  font-family: "oso-sans-variable", sans-serif;
+font-variation-settings: "wdth" 70, "wght" 200;
+}
