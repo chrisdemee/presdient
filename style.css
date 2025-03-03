@@ -41,6 +41,16 @@ body#index-page {
   color: white; /* Ensures text is visible on dark backgrounds */
 }
 
+body#presidency-page {
+  background: linear-gradient(to right, #0a4be4, #c7e5f1);
+  color: white; /* Ensures text is visible on dark backgrounds */
+}
+
+body#legacy-page {
+  background: linear-gradient(to right, #0a4be4, #0e3646);
+  color: white; /* Ensures text is visible on dark backgrounds */
+}
+
 h1 {
   font-family: "pressato-variable", sans-serif;
   font-size: 150px;
@@ -49,4 +59,5 @@ font-variation-settings: "slnt" 0, "wght" 300, "wdth" 200;
 p {
   font-family: "oso-sans-variable", sans-serif;
 font-variation-settings: "wdth" 70, "wght" 200;
+font-size: 40px;
 }

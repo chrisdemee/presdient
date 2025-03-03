@@ -40,11 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Wait until site is loaded before running the script
 document.addEventListener("DOMContentLoaded", () => {
     // Select important elements from the HTML
-    const quizContainer = document.getElementById("quiz-container"); // Div to hold quiz questions
-    const submitButton = document.getElementById("submit-btn"); // Button to submit the quiz
-    const scoreDisplay = document.getElementById("score"); // Element to display the score
+    const quizContainer = document.getElementById("quiz-container"); // div holds quiz questions
+    const submitButton = document.getElementById("submit-btn"); // button submits quiz 
+    const scoreDisplay = document.getElementById("score"); // shows score
 
-    // Array storing the quiz questions, answer options, and correct answers
+    // array that stores the quiz questions, answer options, and correct answers
     const quizQuestions = [
         {
             question: "Which agency did Nixon establish to protect the environment?",
