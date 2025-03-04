@@ -100,9 +100,13 @@ font-size: 40px;
   color: #FFD700 ;
 }
 #score {
-  text-align: center; /* Centers the text */
-  font-size: 1.5rem;  /* Makes it a little bigger */
-  font-weight: bold;  /* Makes it bold */
-  margin-top: 20px;   /* Adds some spacing */
+  text-align: center; 
+  font-size: 1.5rem; 
+  font-weight: bold;  
+  margin-top: 20px;   
   display: block;     
+}
+iframe {
+  max-width: 100%;
+  height: auto;
 }
