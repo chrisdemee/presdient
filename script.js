@@ -1,3 +1,4 @@
+// array stores nixon's quotes
 const nixonQuotes = [
     "The greatest honor history can bestow is the title of peacemaker.",
     "A man is not finished when he is defeated. He is finished when he quits.",
@@ -6,45 +7,30 @@ const nixonQuotes = [
     "The presidency has many problems, but boredom is the least of them."
 ];
 
+// function that selects a random quote and displays it
 function getRandomQuote() {
-    const randomIndex = Math.floor(Math.random() * nixonQuotes.length);
-    document.getElementById("quoteDisplay").innerText = nixonQuotes[randomIndex];
+    const randomIndex = Math.floor(Math.random() * nixonQuotes.length); // math object: generates random index
+    document.getElementById("quoteDisplay").innerText = nixonQuotes[randomIndex]; // dom manipulation: updates displayed quote
 }
 
+// event listener that waits until page is fully loaded before running script
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("quoteDisplay").innerText = nixonQuotes[0]; // show the first quote when site loads
-    document.getElementById("generateQuote").addEventListener("click", getRandomQuote);
+    document.getElementById("quoteDisplay").innerText = nixonQuotes[0]; // dom manipulation: sets default quote
+    document.getElementById("generateQuote").addEventListener("click", getRandomQuote); // event listener: changes quote on button click
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const facts = [
-        "Nixon was the first U.S. president to visit China.",
-        "He played five musical instruments, including the piano.",
-        "Nixon founded the Environmental Protection Agency (EPA).",
-        "He was a Quaker and didn't drink alcohol.",
-        "Nixon was an accomplished poker player during his Navy years."
-    ];
     
-    const factText = document.getElementById("fact");
-    const hiddenContent = document.getElementById("hiddenContent");
-    const factButton = document.getElementById("factButton");
-    
-    factButton.addEventListener("click", function () {
-        const randomIndex = Math.floor(Math.random() * facts.length);
-        factText.textContent = facts[randomIndex];
-        hiddenContent.style.display = "block";
-    });
 });
 
-//quiz java start
-// Wait until site is loaded before running the script
+// waits until site is loaded before running the quiz script
 document.addEventListener("DOMContentLoaded", () => {
-    // Select important elements from the HTML
+    // selects elements from the html
     const quizContainer = document.getElementById("quiz-container"); // div holds quiz questions
-    const submitButton = document.getElementById("submit-btn"); // button submits quiz 
+    const submitButton = document.getElementById("submit-btn"); // button submits quiz
     const scoreDisplay = document.getElementById("score"); // shows score
 
-    // array that stores the quiz questions, answer options, and correct answers
+    // array stores quiz questions, answer options, and correct answers
     const quizQuestions = [
         {
             question: "Which agency did Nixon establish to protect the environment?",
@@ -68,63 +54,63 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Function to generate quiz questions dynamically
+    // function that generates quiz questions dynamically
     function loadQuiz() {
-        // Loop through each question in the array
+        // loop that iterates through each quiz question
         quizQuestions.forEach((q, index) => {
-            // Create a div to hold each question and its options
+            //creates div for the question
             const questionDiv = document.createElement("div");
             questionDiv.classList.add("mt-3");
 
-            // Create and add the question text
+            //creates and adds question text
             const questionText = document.createElement("h4");
-            questionText.textContent = `${index + 1}. ${q.question}`;
+            questionText.textContent = `${index + 1}. ${q.question}`; // template literals: adds dynamic numbering
             questionDiv.appendChild(questionText);
 
-            // Loop through answer options and create radio buttons
+            // loop that iterates through answer options and creates radio buttons
             q.options.forEach(option => {
-                const label = document.createElement("label");
-                label.classList.add("d-block"); // Makes each option appear on a new line
+                const label = document.createElement("label"); // dom manipulation: creates label for radio button
+                label.classList.add("d-block"); // dom manipulation: makes each option appear on a new line
 
-                const input = document.createElement("input");
-                input.type = "radio"; // Radio button input
-                input.name = `question${index}`; // Grouping by question index to allow only one selection per question
-                input.value = option; // Assign value for checking the answer
+                const input = document.createElement("input"); 
+                // makes radio button
+                input.type = "radio"; 
+                // scope that groups radio buttons by question number
+                input.name = `question${index}`; 
+                 // assigns the option value
+                input.value = option;
 
-                // Append the radio button to the label and then add the label to the question div
-                label.appendChild(input);
-                label.append(` ${option}`);
-                questionDiv.appendChild(label);
+                label.appendChild(input); // dom manipulation: attaches radio button to label
+                label.append(` ${option}`); // string concatenation: adds text next to radio button
+                questionDiv.appendChild(label); // dom manipulation: appends label to question div
             });
 
-            // Append the whole question section to the quiz container in HTML
-            quizContainer.appendChild(questionDiv);
+            quizContainer.appendChild(questionDiv); //adds the entire question section to quiz container
         });
     }
 
-    // Function to check the user's answers and calculate score
+    // function that checks user's answers and calculates score
     function checkAnswers() {
-        let score = 0; // Variable to keep track of correct answers
+        let score = 0; // variable: tracks number of correct answers
 
-        // Loop through each question and check the user's selected answer
+        // loop that iterates through each quiz question
         quizQuestions.forEach((q, index) => {
-            // Get the selected answer for the current question
+            // dom selection: gets selected answer for current question
             const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
             
-            // Compare selected answer with the correct answer
+            // if statement condition checks if selected answer matches the correct answer
             if (selectedAnswer && selectedAnswer.value === q.answer) {
-                score++; // Increase score if the answer is correct
+                score++; // increments score if answer is correct
             }
         });
 
-        // Display the final score to the user
+        // displays final score
         scoreDisplay.textContent = `You scored ${score} out of ${quizQuestions.length}!`;
     }
 
-    // Add event listener to the submit button to trigger score calculation when clicked
+    //  runs checkAnswers function when submit button is clicked
     submitButton.addEventListener("click", checkAnswers);
 
-    // Call function to load quiz questions when the page is loaded
+    // calls function, loads quiz questions when page is loaded
     loadQuiz();
 });
-

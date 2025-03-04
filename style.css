@@ -3,7 +3,7 @@
   font-weight: 800;
   font-style: normal;
   font-size: 20px;
-  color: #e30505;
+  color: #100e0e;
   text-align: center;
   margin-top: 20px;
 }
@@ -38,17 +38,22 @@ h1, p {
 
 body#index-page {
   background: linear-gradient(to right, #0a4be4, #e12544);
-  color: white; /* Ensures text is visible on dark backgrounds */
+  color: white; 
 }
 
 body#presidency-page {
   background: linear-gradient(to right, #0a4be4, #c7e5f1);
-  color: white; /* Ensures text is visible on dark backgrounds */
+  color: white;
 }
 
 body#legacy-page {
   background: linear-gradient(to right, #0a4be4, #0e3646);
-  color: white; /* Ensures text is visible on dark backgrounds */
+  color: white; 
+}
+
+body#javatwo-page {
+  background: linear-gradient(to right, #3bbc08, #058985);
+  color: white; 
 }
 
 h1 {
@@ -60,4 +65,44 @@ p {
   font-family: "oso-sans-variable", sans-serif;
 font-variation-settings: "wdth" 70, "wght" 200;
 font-size: 40px;
+}
+
+#quiz-container {
+  width: 50%;  
+  margin: auto; 
+  text-align: center; 
+  padding: 20px; 
+}
+
+#submit-btn {
+  display: block;
+  margin: 20px auto; 
+}
+
+#presidency-page img {
+  width: 50%; 
+  height: auto; 
+  display: block;
+  margin: auto; 
+}
+
+.navbar {
+  background-color: #004080 ;
+}
+
+.navbar .nav-link {
+  color: rgb(6, 6, 6) ;
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.navbar .nav-link:hover {
+  background-color: #002855;
+  color: #FFD700 ;
+}
+#score {
+  text-align: center; /* Centers the text */
+  font-size: 1.5rem;  /* Makes it a little bigger */
+  font-weight: bold;  /* Makes it bold */
+  margin-top: 20px;   /* Adds some spacing */
+  display: block;     
 }
